@@ -1,0 +1,10 @@
+version: '3'
+services:
+  backup:
+    build: .
+    env_file: .env.backup
+    depends_on:
+      - db
+  db:
+    image: jvanoers/docker-mysql-utf8mb4
+    env_file: .env.db
